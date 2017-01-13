@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import requests
-# from requests.utils import quote
 
 from utils.timer import exe_time
 
@@ -26,10 +25,8 @@ class PageHandler(object):
 
     @exe_time
     def get_page(self):
-        # url = quote(target_url, safe='')
         r = requests.get("https://www.instaparser.com/preview",
                          params=self.payload, headers=self.headers)
-        # return r.url
         if r.status_code == 200:
             return True
         else:
