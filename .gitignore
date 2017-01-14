@@ -91,3 +91,4 @@ venv3/
 
 # Construection file of JetBrains
 .idea
+.DS_Store
