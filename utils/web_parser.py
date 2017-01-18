@@ -4,9 +4,13 @@ import requests
 from bs4 import BeautifulSoup
 # import kindlestrip
 import os
+from celery import Celery
 
 from utils.config import CURCONF
 from utils.timer import exe_time
+
+
+celery_app = Celery('web_parser', broker=CURCONF.REDIS_URL)
 
 
 class PageHandler(object):

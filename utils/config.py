@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import os
+
 
 class BaseConf(object):
     HEADERS = {
@@ -16,4 +18,13 @@ class BaseConf(object):
     }
 
 
-CURCONF = BaseConf
+class TestConf(BaseConf):
+    REDIS_URL = "redis://:{password}@{hostname}:{port}/{db_number}".format(
+        password=os.environ.get("REDIS_PWD"),
+        hostname='127.0.0.1',
+        port=6379,
+        db_number=0
+    )
+
+
+CURCONF = TestConf
