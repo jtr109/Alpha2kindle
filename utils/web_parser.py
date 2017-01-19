@@ -18,6 +18,7 @@ class PageHandler(object):
         self.headers = CURCONF.HEADERS
 
     @exe_time
+    @celery_app.task
     def run(self, url):
         text_info = self._parse_html(url)  # parsed html
         if text_info is not None:

@@ -92,3 +92,9 @@ venv3/
 # Construection file of JetBrains
 .idea
 .DS_Store
+
+# build file to set non disclosure config
+build.ini
+
+# tmp dir to save parsed files
+tmp
