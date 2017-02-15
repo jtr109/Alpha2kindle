@@ -45,7 +45,8 @@ class PageHandler(object):
         print("Save path: %s" % path)
         self._save_file(path, text_info.get('text'))
 
-    def _save_file(self, path, text):
+    @staticmethod
+    def _save_file(path, text):
         try:
             f = open(path, 'w', encoding='utf-8')
         except FileNotFoundError as e:
